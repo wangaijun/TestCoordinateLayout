@@ -9,14 +9,32 @@
 
     <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+    >
         <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?android:attr/actionBarSize"
                 android:background="?attr/colorPrimary"
-                app:layout_scrollFlags="scroll|enterAlways"
-        />
+                app:layout_scrollFlags="scroll|snap"
+                android:minHeight="20dp"
+        >
+        </android.support.v7.widget.Toolbar>
+        <!--
+            scroll 伴随着滚动事件而滚出或滚进屏幕。
+            scroll|enterAlways 快速返回模式,其实就是向下滚动时Scrolling View和Child View之间的滚动优先级问题，
+                               发生滚动时，优先滚动child view
+            scroll|enterAlways|enterAlwaysCollapsed 这里涉及到Child View的高度和最小高度，向下滚动时，
+                              Child View先向下滚动最小高度值，然后Scrolling View开始滚动，
+                              到达边界时，Child View再向下滚动，直至显示完全。
+                              android:minHeight
+            scroll|exitUntilCollapsed 这里也涉及到最小高度。发生向上滚动事件时，Child View向上滚动退出直至最小高度，
+                                      然后Scrolling View开始滚动。也就是，Child View不会完全退出屏幕。
+            scroll|snap 当我们松开手指时，要么全部滚出屏幕，要么向下全部滚进屏幕，有点类似ViewPager的左右滑动
+            参考网址： https://www.jianshu.com/p/7caa5f4f49bd
+         -->
+
+
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.widget.NestedScrollView
