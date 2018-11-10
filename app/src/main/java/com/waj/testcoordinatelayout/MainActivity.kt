@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         toolbar.subtitle = "child title"
         setSupportActionBar(toolbar)
 
+
         for (i in 1..100){
             tv.append("$i\n")
         }
