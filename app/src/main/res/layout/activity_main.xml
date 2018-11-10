@@ -22,9 +22,9 @@
         >
             <ImageView
                     android:id="@+id/main.backdrop"
-                    android:layout_width="wrap_content"
-                    android:layout_height="300dp"
-                    android:scaleType="centerCrop"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="fitXY"
                     android:src="@drawable/water"
                     app:layout_collapseMode="parallax" />
 
@@ -34,7 +34,7 @@
                     android:layout_height="?android:attr/actionBarSize"
                     app:layout_collapseMode="pin"  />
         </android.support.design.widget.CollapsingToolbarLayout>
-        <!--
+        <!-- toolbar
             scroll 伴随着滚动事件而滚出或滚进屏幕。
             scroll|enterAlways 快速返回模式,其实就是向下滚动时Scrolling View和Child View之间的滚动优先级问题，
                                发生滚动时，优先滚动child view
@@ -48,7 +48,9 @@
             参考网址： https://www.jianshu.com/p/7caa5f4f49bd
          -->
 
-
+        <!--
+            CollapsingToolbarLayout 图片被设置为有视差的滑动，ToolBar被设置为固定不动，title会被放大和缩小
+         -->
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.widget.NestedScrollView
