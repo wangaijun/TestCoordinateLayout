@@ -1,10 +1,7 @@
 package com.waj.testcoordinatelayout
 
-import android.app.Activity
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.view.Window
-import android.view.WindowManager
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -19,5 +16,9 @@ class MainActivity : AppCompatActivity() {
         toolbar.setLogo(R.mipmap.ic_launcher)
         toolbar.subtitle = "child title"
         setSupportActionBar(toolbar)
+
+        for (i in 1..100){
+            tv.append("$i\n")
+        }
     }
 }
